@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany } from "typeorm";
 import GeoPositions from "./GeoPositions";
+import UsersAddresses from "./UsersAddresses";
 
 @Entity("addresses")
 export default class Addresses {
@@ -21,4 +22,7 @@ export default class Addresses {
   @OneToOne(() => GeoPositions)
   @JoinColumn()
   geo: GeoPositions;
+
+  @OneToMany(() => UsersAddresses, ua => ua.address)
+  userAddress: UsersAddresses[];
 }
