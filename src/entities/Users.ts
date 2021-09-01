@@ -1,10 +1,7 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToMany,
-} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import Posts from "./Posts";
 import UsersAddresses from "./UsersAddresses";
+import UsersCompanies from "./UsersCompanies";
 
 @Entity("users")
 export default class Users {
@@ -26,6 +23,12 @@ export default class Users {
   @Column()
   website: string;
 
-  @OneToMany(() => UsersAddresses, ua => ua.user)
+  @OneToMany(() => UsersAddresses, (ua) => ua.user)
   userAddress: UsersAddresses[];
+
+  @OneToMany(() => UsersCompanies, (uc) => uc.user)
+  userCompany: UsersCompanies[];
+
+  @OneToMany(() => Posts, (u) => u.user)
+  post: Posts[];
 }
