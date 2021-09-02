@@ -14,7 +14,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
-  await clearDatabase();  
+  await clearDatabase();
 });
 
 afterAll(async () => {
@@ -22,11 +22,11 @@ afterAll(async () => {
 });
 
 describe("get /", () => {
-    it("should answer status 200 and an array with all posts", async () => {
-      await postsFactory.createUsers();
-      await postsFactory.createPosts();
-      const response = await test.get("/");    
-      expect(response.body.length).toEqual(5);
-      expect(response.status).toBe(200);
-    });
+  it("should answer status 200 and an array with all posts", async () => {
+    await postsFactory.createUsers();
+    await postsFactory.createPosts();
+    const response = await test.get("/");
+    expect(response.body.length).toEqual(5);
+    expect(response.status).toBe(200);
+  });
 });
