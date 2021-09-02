@@ -2,12 +2,9 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
-  JoinColumn,
   OneToMany,
 } from "typeorm";
-import GeoPositions from "./GeoPositions";
-import UsersAddresses from "./UsersAddresses";
+// import UsersAddresses from "./UsersAddresses";
 
 @Entity("addresses")
 export default class Addresses {
@@ -26,10 +23,9 @@ export default class Addresses {
   @Column()
   zipCode: string;
 
-  @OneToOne(() => GeoPositions)
-  @JoinColumn()
-  geo: GeoPositions;
+  @Column()
+  lat: string;
 
-  @OneToMany(() => UsersAddresses, (ua) => ua.address)
-  userAddress: UsersAddresses[];
+  @Column()
+  lng: string;
 }
