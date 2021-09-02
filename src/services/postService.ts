@@ -2,6 +2,6 @@ import { getRepository } from "typeorm";
 import Posts from "../entities/Posts";
 
 export async function getAllPosts() {
-  const posts = await getRepository(Posts).find();
+  const posts = await getRepository(Posts).find({ relations: ["user"] });
   return posts;
 }
