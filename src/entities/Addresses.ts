@@ -4,7 +4,7 @@ import {
   Column,
   OneToMany,
 } from "typeorm";
-// import UsersAddresses from "./UsersAddresses";
+import UsersAddresses from "./UsersAddresses";
 
 @Entity("addresses")
 export default class Addresses {
@@ -28,4 +28,7 @@ export default class Addresses {
 
   @Column()
   lng: string;
+
+  @OneToMany(() => UsersAddresses, (ua) => ua.address)
+  userAddress: UsersAddresses[];
 }

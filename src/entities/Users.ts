@@ -1,5 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
-
+import UsersAddresses from "./UsersAddresses";
+import UsersCompanies from "./UsersCompanies";
+import Posts from "./Posts";
 @Entity("users")
 export default class Users {
   @PrimaryGeneratedColumn()
@@ -19,4 +21,13 @@ export default class Users {
 
   @Column()
   website: string;
+
+  @OneToMany(() => UsersAddresses, (ua) => ua.user)
+  userAddress: UsersAddresses[];
+
+  @OneToMany(() => UsersCompanies, (uc) => uc.user)
+  userCompany: UsersCompanies[];
+
+  @OneToMany(() => Posts, (u) => u.user)
+  post: Posts[];
 }
