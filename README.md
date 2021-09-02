@@ -6,6 +6,8 @@ API to get posts from employees from several companies.
 ## API link:
 https://growth-monitor.herokuapp.com/
 
+## Please check also the web application: 
+https://growth-monitor.vercel.app/
 ## Tech tools :wrench:
 The following tools and frameworks were used in the construction of the project:<br>
 <p>
@@ -18,8 +20,8 @@ The following tools and frameworks were used in the construction of the project:
 
 ## How to run
 1. Clone this repository
-2. Clone the [front-end repository](https://github.com/jotabraga/examdrive-frontend)
-3. Follow instructions to run [front-end](https://github.com/jotabraga/examdrive-frontend#readme)
+2. Clone the [front-end repository](https://github.com/eduardosaneto/growth-monitor)
+3. Follow instructions to run [front-end](https://github.com/eduardosaneto/growth-monitor#readme)
 4. Install dependencies
 ```bash
 npm i
