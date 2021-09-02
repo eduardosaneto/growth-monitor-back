@@ -6,13 +6,13 @@ import "reflect-metadata";
 
 import connectDatabase from "./database";
 
-// import * as dbController from "./controllers/dbController";
+import * as dbController from "./controllers/dbController";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// app.post("/populate-database", dbController.populateDb);
+app.post("/populate-database", dbController.populateDb);
 
 export async function init () {
   await connectDatabase();
